@@ -1,0 +1,120 @@
+{
+  "id": "priscilla",
+  "name": "Priscilla",
+  "price": 1095,
+  "currency": "USD",
+  "style": "N4830.54-6010-B-6",
+  "description": "Our No. 1 bestselling boot for women, Priscilla walks an elegant line between timeless classic and cowgirl chic. The vintage-inspired Tioga stitch pattern harks back to yesteryear, but Priscilla is a boot built for today. This knee-skimming, pull-on silhouette handcrafted from supple Old English goat leather deserves the spotlight under dresses and over jeans. Handmade in Texas.",
+  "variants": [
+    {
+      "id": "red",
+      "color": "Red",
+      "image": "https://www.lucchese.com/cdn/shop/files/N4830.54-6010_Right_91926abf-4f85-4aaa-847a-614881476036_2000x.jpg?v=1738689722"
+    },
+    {
+      "id": "espresso",
+      "color": "Espresso",
+      "image": "https://www.lucchese.com/cdn/shop/files/GY4579.S54_Right_2000x.jpg?v=1744392497"
+    },
+    {
+      "id": "black",
+      "color": "Black",
+      "image": "https://www.lucchese.com/cdn/shop/files/GY4581S54-1001_Right_2000x.jpg?v=1748981155"
+    }
+  ],
+  "sizes": [
+    {
+      "size": "6",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "6.5",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "7",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "7.5",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "8",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "8.5",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "9",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "9.5",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "10",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "10.5",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    },
+    {
+      "size": "11",
+      "widths": ["B", "C"],
+      "calfWidths": ["Regular", "Extended"]
+    }
+  ],
+  "gallery": [
+    {
+      "id": "red",
+      "images": [
+        "https://www.lucchese.com/cdn/shop/files/N4830.54-6010_Right_91926abf-4f85-4aaa-847a-614881476036_2000x.jpg?v=1738689722",
+        "https://www.lucchese.com/cdn/shop/files/N4830.54-6010_Right_91926abf-4f85-4aaa-847a-614881476036_2000x.jpg?v=1738689722",
+        "https://www.lucchese.com/cdn/shop/files/N4830.54-6010_Right_91926abf-4f85-4aaa-847a-614881476036_2000x.jpg?v=1738689722"
+      ]
+    },
+    {
+      "id": "espresso",
+      "images": [
+        "https://www.lucchese.com/cdn/shop/files/GY4579.S54_Right_2000x.jpg?v=1744392497",
+        "https://www.lucchese.com/cdn/shop/files/GY4579.S54_Left_2000x.jpg?v=1744392497",
+        "https://www.lucchese.com/cdn/shop/files/GY4579.S54_Back_2000x.jpg?v=1744392497"
+      ]
+    },
+    {
+      "id": "black",
+      "images": [
+        "https://www.lucchese.com/cdn/shop/files/GY4581S54-1001_Right_2000x.jpg?v=1748981155",
+        "https://www.lucchese.com/cdn/shop/files/GY4581S54-1001_Left_2000x.jpg?v=1748981155",
+        "https://www.lucchese.com/cdn/shop/files/GY4581S54-1001_Back_2000x.jpg?v=1748981155"
+      ]
+    }
+  ],
+  "details": [
+    "Bovine leather vamps",
+    "Bovine leather quarters",
+    "17-inch quarters",
+    "Tioga quarter stitch pattern",
+    "Detailed vamp stitch pattern",
+    "CJ pull straps with overlay",
+    "Natural stacked-leather heel",
+    "Single-stitched welt",
+    "Leather outsole",
+    "Handmade in Texas"
+  ]
+}

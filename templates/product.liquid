@@ -1,0 +1,35 @@
+
+<!-- templates/product.liquid -->
+{% layout 'layout/theme' %}
+
+{% block content %}
+<div x-data="productStore()">
+    <!-- Loading State -->
+    <div x-show="loading" >
+        <p>Loading product</p>
+    </div>
+    
+    <!-- Error State -->
+    <div x-show="error">
+        <p x-text="error"></p>
+    </div>
+
+
+    <!-- Alpine.js Product Component -->
+    {% render 'snippets/alpine-product' %}
+    
+    <!-- Recommendations Section -->
+    <div  x-show="recommendations.length > 0 && !loading && !error">
+        <h2>Recommended Products</h2>
+        <div>
+            <template x-for="rec in recommendations" :key="rec.id">
+                <div>
+                    <img :src="rec.image" :alt="rec.name">
+                    <h3 x-text="rec.name"></h3>
+                    <p x-text="rec.price"></p>
+                </div>
+            </template>
+        </div>
+    </div>
+</div>
+{% endblock %}
