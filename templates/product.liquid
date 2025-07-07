@@ -1,34 +1,54 @@
-
 <!-- templates/product.liquid -->
 {% layout 'layout/theme' %}
 
 {% block content %}
-<div x-data="productStore()">
-    <!-- Loading State -->
-    <div x-show="loading" >
-        <p>Loading product</p>
-    </div>
-    
-    <!-- Error State -->
-    <div x-show="error">
-        <p x-text="error"></p>
-    </div>
-
-
+<div id="product-app" x-data="productStore()" x-init="init()">
     <!-- Alpine.js Product Component -->
     {% render 'snippets/alpine-product' %}
     
-    <!-- Recommendations Section -->
-    <div  x-show="recommendations.length > 0 && !loading && !error">
-        <h2>Recommended Products</h2>
-        <div>
-            <template x-for="rec in recommendations" :key="rec.id">
-                <div>
-                    <img :src="rec.image" :alt="rec.name">
-                    <h3 x-text="rec.name"></h3>
-                    <p x-text="rec.price"></p>
+    <!-- Collapsible Dropdowns Section -->
+    <div class="my-8 mx-auto max-w-2xl w-full" x-data="{ open: [true, false, false] }">
+        {% capture description_content %}
+            <p x-text="product.description"></p>
+            <ul class="list-disc pl-6 mt-2" x-show="product.details && product.details.length > 0">
+                <template x-for="detail in product.details" :key="detail">
+                    <li x-text="detail"></li>
+                </template>
+            </ul>
+        {% endcapture %}
+        
+        {% capture material_content %}
+            <p x-text="product.material"></p>
+        {% endcapture %}
+        
+        {% capture care_content %}
+            <p x-text="product.care"></p>
+        {% endcapture %}
+        
+        {% render 'snippets/dropdown-section', title: 'Description', content: description_content, index: 0 %}
+        {% render 'snippets/dropdown-section', title: 'Material', content: material_content, index: 1 %}
+        {% render 'snippets/dropdown-section', title: 'Care', content: care_content, index: 2 %}
+    </div>
+    
+    <!-- Recommended Products -->
+    <div class="py-16 bg-gray-100 mx-auto px-4 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <!-- Placeholder Image -->
+            <div class="bg-gray-100 rounded-lg shadow-lg flex flex-col overflow-hidden h-full">
+                <div class="relative w-full h-full flex items-center justify-center bg-gray-100 md:h-full">
+                    <img src="https://www.lucchese.com/cdn/shop/files/1_1000x.svg?v=1749824747" alt="lifestyle image" class="object-cover h-full w-full" />
                 </div>
-            </template>
+            </div>
+            
+            <!-- Product Cards Column -->
+            <div class="col-span-2 flex flex-col gap-8">
+                <h2 class="text-2xl mb-4 uppercase">you might be interested in</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+                    <template x-for="rec in recommendations" :key="rec.id">
+                        {% render 'snippets/product-card' %}
+                    </template>
+                </div>
+            </div>
         </div>
     </div>
 </div>

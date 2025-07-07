@@ -5,6 +5,10 @@ function productStore() {
         cart: [],
         loading: false,
         error: null,
+        selectedVariant: {},
+        selectedImage: '',
+        selectedSize: '',
+        images: [],
         
         async init() {
             await this.fetchProduct();
@@ -23,6 +27,11 @@ function productStore() {
                 
                 const data = await response.json();
                 this.product = data|| {};
+                
+                // Set defaults after fetching product
+                if (this.product.variants && this.product.variants.length > 0) {
+                    this.selectVariant(this.product.variants[0]);
+                }
                     
                 console.log('Product fetched from API:', this.product, 'product');
             } catch (error) {
@@ -48,6 +57,27 @@ function productStore() {
                 console.error('Error fetching recommendations:', error);
             }
         },
+        
+        formatPrice(price) {
+            if (!price) return '$0';
+            return `$${price.toLocaleString()}`;
+        },
+        
+        selectVariant(variant) {
+            this.selectedVariant = variant;
+            // Update gallery to match variant
+            if (variant && this.product.gallery) {
+                const galleryForVariant = this.product.gallery.find(g => g.id === variant.id);
+                if (galleryForVariant && galleryForVariant.images) {
+                    this.images = galleryForVariant.images;
+                    this.selectedImage = galleryForVariant.images[0] || '';
+                }
+            }
+        },
+        
+        onSizeChange(sizeValue) {
+            this.selectedSize = sizeValue || '';
+        }
     }
 }
 
