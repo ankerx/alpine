@@ -7,7 +7,7 @@
     {% render 'snippets/alpine-product' %}
     
     <!-- Collapsible Dropdowns Section -->
-    <div class="my-8 mx-auto max-w-2xl w-full" x-data="{ open: [true, false, false] }">
+    <div class="my-8 mx-auto max-w-2xl w-full px-4 md:px-0" x-data="{ open: [true, false, false] }">
         {% capture description_content %}
             <p x-text="product.description"></p>
             <ul class="list-disc pl-6 mt-2" x-show="product.details && product.details.length > 0">
